@@ -6,7 +6,7 @@ export const JOIN_ACTION = "JOIN_ACTION";
 
 const AuthContainer = () => {
     //로그인,회원가입 폼
-    const [form, setForm] = useState(JOIN_ACTION);
+    const [form, setForm] = useState(LOGIN_ACTION);
 
     //로그인
     const [userData, setUserDatae] = useState({
@@ -25,6 +25,8 @@ const AuthContainer = () => {
     const onSubmit = () => {
         console.log("userData", userData);
         console.log("joinData", joinData);
+
+        setUserDatae({ ...userData, password: "" });
     };
 
     return (
