@@ -1,5 +1,14 @@
+import React from "react";
+import Router from "./components/Router";
+import GlobalStyles from "./styles/GlobalStyles";
+
 function App() {
-    return <div className="App">ads</div>;
+    return (
+        <>
+            <Router />
+            <GlobalStyles />
+        </>
+    );
 }
 
 export default App;
