@@ -50,4 +50,4 @@ export const Input = styled.input`
     border: none;
 `;
 
-export const Button = styled.button;
+export const Button = styled.button``;
