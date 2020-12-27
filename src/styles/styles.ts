@@ -12,6 +12,7 @@ interface Istyle {
     border?: string;
     borderRadius?: string;
     flexDirection?: string; //flex-bos안에 내용들을 정렬
+    position?: string;
 }
 
 export const Wrapper = styled.div`
@@ -39,6 +40,7 @@ export const Box = styled.div`
     border-radius: ${(props: Istyle) => (props.borderRadius ? props.borderRadius : null)};
     border: ${(props: Istyle) => (props.border ? props.border : null)};
     flex-direction: ${(props: Istyle) => (props.flexDirection ? props.flexDirection : null)};
+    position: ${(props: Istyle) => (props.position ? props.position : null)};
 `;
 
 export const Input = styled.input`
@@ -50,4 +52,15 @@ export const Input = styled.input`
     border: none;
 `;
 
-export const Button = styled.button``;
+export const Button = styled.button`
+    width: ${(props: Istyle) => (props.width ? props.width : null)};
+    height: ${(props: Istyle) => (props.height ? props.height : null)};
+    margin: ${(props: Istyle) => (props.margin ? props.margin : null)};
+    padding: ${(props: Istyle) => (props.padding ? props.padding : null)};
+    display: ${(props: Istyle) => (props.display ? props.display : null)};
+    justify-content: ${(props: Istyle) => (props.justifyContent ? props.justifyContent : null)};
+    align-items: ${(props: Istyle) => (props.alignItems ? props.alignItems : null)};
+    background-color: ${(props: Istyle) => (props.backgroundColor ? props.backgroundColor : null)};
+    border-radius: ${(props: Istyle) => (props.borderRadius ? props.borderRadius : null)};
+    border: ${(props: Istyle) => (props.border ? props.border : null)};
+`;

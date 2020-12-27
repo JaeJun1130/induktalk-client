@@ -1,7 +1,7 @@
 import React from "react";
-import { Box, Button, Input, Wrapper } from "../styles/styles";
-import { LOGIN_ACTION } from "../routes/Auth/AuthContainer";
-import { IProps } from "../routes/Auth/AuthPresenter";
+import { Box, Button, Input, Wrapper } from "../../styles/styles";
+import { JOIN_ACTION, LOGIN_ACTION } from "../../routes/Auth/AuthContainer";
+import { IProps } from "../../routes/Auth/AuthPresenter";
 
 const JoinForm = ({ joinData, setjoinData, onSubmit, setForm }: IProps) => {
     return (
@@ -67,8 +67,23 @@ const JoinForm = ({ joinData, setjoinData, onSubmit, setForm }: IProps) => {
                         }}
                     />
 
-                    <Button onClick={onSubmit}>회원가입</Button>
-                    <Button onClick={() => setForm(LOGIN_ACTION)}>돌아가기</Button>
+                    <Button
+                        padding={"10px"}
+                        borderRadius={"5px"}
+                        width={"250px;"}
+                        onClick={(e) => onSubmit(e, JOIN_ACTION)}
+                    >
+                        회원가입
+                    </Button>
+                    <Button
+                        padding={"10px"}
+                        borderRadius={"5px"}
+                        width={"250px;"}
+                        margin={"20px"}
+                        onClick={() => setForm(LOGIN_ACTION)}
+                    >
+                        돌아가기
+                    </Button>
                 </Box>
             </Wrapper>
         </>

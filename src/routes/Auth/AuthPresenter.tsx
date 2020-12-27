@@ -1,6 +1,6 @@
 import React, { Dispatch, SetStateAction } from "react";
-import JoinForm from "../../components/JoinForm";
-import LoginForm from "../../components/LoginForm";
+import JoinForm from "../../components/auth/JoinForm";
+import LoginForm from "../../components/auth/LoginForm";
 import { JOIN_ACTION, LOGIN_ACTION } from "./AuthContainer";
 
 export interface IProps {
@@ -18,7 +18,7 @@ export interface IProps {
     };
     setjoinData: Dispatch<SetStateAction<{ studentId: string; password: string; firstName: string; lastName: string }>>;
 
-    onSubmit: () => void;
+    onSubmit: (e: any, action: string) => void;
 
     form: string;
     setForm: Dispatch<SetStateAction<string>>;
