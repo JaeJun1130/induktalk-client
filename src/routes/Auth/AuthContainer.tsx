@@ -1,6 +1,7 @@
 import { useMutation } from "@apollo/client";
 import { useSnackbar } from "notistack";
 import React, { useState } from "react";
+import LoginForm from "../../components/auth/LoginForm";
 import { JOIN, LOCAL_LOGIN, LOGIN } from "../../graphql/auth";
 import AuthPresenter from "./AuthPresenter";
 
@@ -8,7 +9,9 @@ export const LOGIN_ACTION = "LOGIN_ACTION";
 export const JOIN_ACTION = "JOIN_ACTION";
 
 const AuthContainer = () => {
-    const { enqueueSnackbar } = useSnackbar(); //스넥바
+    //Snackbar HOOK
+    const { enqueueSnackbar } = useSnackbar();
+
     //로그인,회원가입 폼
     const [form, setForm] = useState(LOGIN_ACTION);
 
@@ -31,6 +34,7 @@ const AuthContainer = () => {
 
     const [joinMutation] = useMutation(JOIN); //로그아웃 gql
 
+    //onSubmit 할때 서버와 통신
     const onSubmit = async (e: any, action: string) => {
         e.preventDefault();
 
@@ -40,6 +44,7 @@ const AuthContainer = () => {
                 try {
                     const {
                         data: { login: token },
+                        //서버와 통신
                     } = await loginMutation({
                         variables: {
                             studentId: userData.studentId,
@@ -81,6 +86,10 @@ const AuthContainer = () => {
                     enqueueSnackbar("회원가입이 되었습니다", { variant: "success" });
                     console.log(data);
                     setjoinData({ ...joinData, studentId: "", firstName: "", lastName: "", password: "" });
+                    setTimeout(() => {
+                        setForm(LOGIN_ACTION);
+                    }, 1000);
+                    setUserDatae({ ...userData, studentId: joinData.studentId });
                 } catch (error) {
                     console.log(error);
                     enqueueSnackbar("정보를 다시 입력하세요", { variant: "error" });

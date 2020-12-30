@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Auth from "../routes/Auth";
 import Feed from "../routes/Feed";
 
+//로그인 라우터
 const LoginRoute = () => {
     return (
         <BrowserRouter>
@@ -17,6 +18,7 @@ const LoginRoute = () => {
     );
 };
 
+//로그아웃 라우터
 const LogoutRoute = () => {
     return (
         <BrowserRouter>
@@ -43,6 +45,7 @@ const Router = () => {
 
     console.log(isLogin);
 
+    //true 로그인 else 로그인창
     return isLogin ? <LoginRoute /> : <LogoutRoute />;
 };
 

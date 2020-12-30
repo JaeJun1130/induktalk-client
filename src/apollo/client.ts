@@ -1,7 +1,7 @@
 import { ApolloClient, gql, InMemoryCache } from "@apollo/client";
 
 const client = new ApolloClient({
-    uri: "http://localhost:4000/graphql",
+    uri: "http://localhost:4001/graphql",
     //client -> server 로 요청전달
     headers: {
         Authorization: `Bearer ${localStorage.getItem("토근 넣을곳")}`,
@@ -12,7 +12,7 @@ const client = new ApolloClient({
                 fields: {
                     isLogin: {
                         read: () => {
-                            return localStorage.getItem("ACCESS_TOKEN") === null ? false : true;
+                            return localStorage.getItem("ACCESS_TOKEN") === null ? false : true; //isLogin 을 read 해서 토근값이 있으면 true
                         },
                     },
                 },
@@ -22,11 +22,10 @@ const client = new ApolloClient({
     resolvers: {
         Mutation: {
             logUserIn: (_, __, { cache }) => {
-                console.log(__, cache);
                 cache.writeQuery({
                     query: gql`
                         {
-                            isLogin @client
+                            isLogin @client #Cache 값에서 isLogin의 값을 빼오는 resolver
                         }
                     `,
                     data: {

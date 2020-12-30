@@ -27,6 +27,7 @@ const LoginForm = ({ userData, setUserData, onSubmit, setForm }: IProps) => {
                 >
                     <img src={"/image/logo.png"} style={{ position: "absolute", top: 0 }} />
                     <Input
+                        className={"studentId"}
                         placeholder={"학번"}
                         padding={"15px"}
                         width={"250px"}
