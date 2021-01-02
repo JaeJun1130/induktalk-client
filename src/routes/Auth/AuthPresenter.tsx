@@ -24,7 +24,7 @@ export interface IProps {
     setForm: Dispatch<SetStateAction<string>>;
 }
 
-const AuthPresenter: React.FC<IProps> = (props) => {
+const AuthPresenter = (props: IProps) => {
     return (
         <>
             {props.form === LOGIN_ACTION && <LoginForm {...props} />}

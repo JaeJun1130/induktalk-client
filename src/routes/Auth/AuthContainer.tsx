@@ -1,7 +1,6 @@
 import { useMutation } from "@apollo/client";
 import { useSnackbar } from "notistack";
 import React, { useState } from "react";
-import LoginForm from "../../components/auth/LoginForm";
 import { JOIN, LOCAL_LOGIN, LOGIN } from "../../graphql/auth";
 import AuthPresenter from "./AuthPresenter";
 

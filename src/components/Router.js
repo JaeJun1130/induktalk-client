@@ -46,7 +46,7 @@ const Router = () => {
     console.log(isLogin);
 
     //true 로그인 else 로그인창
-    return isLogin ? <LoginRoute /> : <LogoutRoute />;
+    return true ? <LoginRoute /> : <LogoutRoute />;
 };
 
 export default Router;
