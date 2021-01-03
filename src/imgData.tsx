@@ -20,7 +20,7 @@ export const img = [
         src: "https://i.pinimg.com/564x/e2/62/e2/e262e21e7d7e851311ca2b936a407467.jpg",
     },
     {
-        아이디: 6,
+        id: 6,
         src: "https://i.pinimg.com/564x/e9/f0/e6/e9f0e6e070bacc54f332229890a661f1.jpg",
     },
     {
