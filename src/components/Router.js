@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Auth from "../routes/Auth";
 import Feed from "../routes/Feed";
+import Test from "../routes/Test";
 
 //로그인 라우터
 const LoginRoute = () => {
@@ -11,7 +12,7 @@ const LoginRoute = () => {
         <BrowserRouter>
             <Switch>
                 <Route path="/" exact>
-                    <Feed />
+                    <Test />
                 </Route>
             </Switch>
         </BrowserRouter>
